@@ -1,22 +1,10 @@
 # finalspeed_client
 为了和surge for mac兼容，去除FinalSpeed中的tcp模式
 
-
 `java -jar client.jar`
 
 ## FinalSpeed 配置
-client_config.json
-```
-{
-  "download_speed": 11200698,
-  "server_address": "1.2.3.4",
-  "server_port": 150,
-  "socks5_port": 1083,
-  "upload_speed": 357469
-}
-```
-
-port_map.json
+finalspeed.json
 ```
 {
   "map_list": [
@@ -25,15 +13,18 @@ port_map.json
       "listen_port": 2000,
       "name": "ss"
     }
-  ]
+  ],
+  "download_speed": 10485760,
+  "server_address": "1.2.3.4",
+  "server_port": 150,
+  "socks5_port": 1083,
+  "upload_speed": 4766254
 }
 ```
-
-论坛 http://www.ip4a.com/c/131.html
 
 ## surge for mac 配置
 Proxy = custom,127.0.0.1,2000,method,password,...
 
-## FinalSpeed.app
-mv fs /usr/local/
-双击FinalSpeed.app执行，或将FinalSpeed.app加入开机启动项
+## Finalspeed.app
+mv Finalspeed.app /Applications
+mv finalspeed.json ~/.finalspeed.json

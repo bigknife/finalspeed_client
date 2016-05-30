@@ -22,12 +22,12 @@ import net.fs.rudp.Route;
 public class PortMapManager {
 
 	MapClient mapClient;
+	
+	ClientConfig cfg = new ClientConfig();
 
 	ArrayList<MapRule> mapList = new ArrayList<MapRule>();
 
 	HashMap<Integer, MapRule> mapRuleTable = new HashMap<Integer, MapRule>();
-
-	String configFilePath = "port_map.json";
 
 	PortMapManager(MapClient mapClient) {
 		this.mapClient = mapClient;
@@ -123,7 +123,7 @@ public class PortMapManager {
 			json_map_list.add(json_rule);
 		}
 		try {
-			saveFile(json.toJSONString().getBytes("utf-8"), configFilePath);
+			saveFile(json.toJSONString().getBytes("utf-8"), cfg.getConfigFilePath());
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
@@ -136,7 +136,7 @@ public class PortMapManager {
 		String content;
 		JSONObject json = null;
 		try {
-			content = readFileUtf8(configFilePath);
+			content = readFileUtf8(cfg.getConfigFilePath());
 			json = JSONObject.parseObject(content);
 		} catch (Exception e) {
 			// e.printStackTrace();

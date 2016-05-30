@@ -5,24 +5,26 @@ package net.fs.client;
 import java.util.ArrayList;
 
 public class ClientConfig {
+	
+	private String configFilePath = System.getProperty("user.home") + "/" + ".finalspeed.json";
 
-	String serverAddress = "";
+	private String serverAddress = "";
 
-	int serverPort;
+	private  int serverPort;
 
-	int remotePort;
+	private int remotePort;
 
-	int downloadSpeed, uploadSpeed;
+	private int downloadSpeed, uploadSpeed;
 
-	boolean direct_cn = true;
+	private boolean direct_cn = true;
 
-	int socks5Port = 1083;
+	private int socks5Port = 1083;
 
-	String remoteAddress;
+	private String remoteAddress;
 
-	boolean autoStart = false;
+	private boolean autoStart = false;
 
-	ArrayList<String> recentAddressList = new ArrayList<String>();
+	private ArrayList<String> recentAddressList = new ArrayList<String>();
 
 	public String getServerAddress() {
 		return serverAddress;
@@ -103,5 +105,8 @@ public class ClientConfig {
 	public void setRecentAddressList(ArrayList<String> recentAddressList) {
 		this.recentAddressList = recentAddressList;
 	}
-
+	
+	public String getConfigFilePath() {
+		return this.configFilePath;
+	}
 }

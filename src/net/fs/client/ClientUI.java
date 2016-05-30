@@ -21,7 +21,6 @@ public class ClientUI implements ClientUII {
 	public boolean isVisible = true;
 	MapClient mapClient;
 	ClientConfig config = null;
-	String configFilePath = "client_config.json";
 	String name = "FinalSpeed";
 	int serverVersion = -1;
 	int localVersion = 5;
@@ -242,7 +241,7 @@ public class ClientUI implements ClientUII {
 		config.setDownloadSpeed(downloadSpeed);
 		config.setUploadSpeed(uploadSpeed);
 		Route.localDownloadSpeed = downloadSpeed;
-		Route.localUploadSpeed = config.uploadSpeed;
+		Route.localUploadSpeed = config.getUploadSpeed();
 
 	}
 
@@ -258,7 +257,7 @@ public class ClientUI implements ClientUII {
 		ClientConfig cfg = new ClientConfig();
 
 		try {
-			String content = readFileUtf8(configFilePath);
+			String content = readFileUtf8(cfg.getConfigFilePath());
 			JSONObject json = JSONObject.parseObject(content);
 			cfg.setServerAddress(json.getString("server_address"));
 			cfg.setServerPort(json.getIntValue("server_port"));
