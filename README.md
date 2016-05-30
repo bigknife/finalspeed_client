@@ -2,7 +2,7 @@
 为了和surge for mac兼容，去除FinalSpeed中的tcp模式
 
 不再需要管理员权限
-java -jar client.jar
+`java -jar client.jar`
 
 ## FinalSpeed 配置
 client_config.json
