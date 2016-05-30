@@ -33,3 +33,7 @@ port_map.json
 
 ## surge for mac 配置
 Proxy = custom,127.0.0.1,2000,method,password,...
+
+## FinalSpeed.app
+mv fs /usr/local/
+双击FinalSpeed.app执行，或将FinalSpeed.app加入开机启动项

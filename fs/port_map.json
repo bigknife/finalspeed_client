@@ -1,0 +1,9 @@
+{
+    "map_list":[
+        {
+            "dst_port": 443,
+            "listen_port": 2000,
+            "name": "ss"
+        }
+    ]
+}
