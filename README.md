@@ -4,8 +4,10 @@
 不再需要管理员权限
 java -jar client.jar
 
+## FinalSpeed 配置
 client_config.json
-```{
+```
+{
   "download_speed": 11200698,
   "server_address": "1.2.3.4",
   "server_port": 150,
@@ -13,6 +15,7 @@ client_config.json
   "upload_speed": 357469
 }
 ```
+
 port_map.json
 ```
 {
@@ -28,4 +31,5 @@ port_map.json
 
 论坛 http://www.ip4a.com/c/131.html
 
-
+## surge for mac 配置
+Proxy = custom,127.0.0.1,2000,method,password,...
